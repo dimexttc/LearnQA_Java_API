@@ -49,7 +49,6 @@ public class TestHomework2_2 {
                 .queryParams(query)
                 .get(url)
                 .jsonPath();
-answer.prettyPrint();
         return answer;
     }
 }
