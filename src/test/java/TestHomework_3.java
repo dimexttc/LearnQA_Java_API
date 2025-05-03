@@ -4,24 +4,27 @@ import org.junit.jupiter.api.Test;
 
 public class TestHomework_3 {
     @Test
-    public void GetRedirect() {
-        String url = "https://playground.learnqa.ru/api/long_redirect";
-        boolean flag = true;
-        while (flag) {
-            Response response = getRequest(url);
-            url = response.getHeader("Location");
-            if (url == null) {
-                System.out.println("редиректа нет " + response.getStatusCode());
-                break;
-            }
-            System.out.println("произошел редирект на адресс " + url);
+    public void getRedirect(){
+       String url="https://playground.learnqa.ru/api/long_redirect";
+       boolean flag=true;
 
-            if (response.getStatusCode() == 200) {
-                flag = false;
-            }
-        }
+       while (flag){
+           Response response=getAnswer(url);
+           String url1=response.getHeader("Location");
+           if (url1==null){
+               System.out.println("редиректа нет "+" мы на сайте "+url);
+                break;
+           }
+           System.out.println("редирект произошел с сайта "+url +" на сайт "+url1);
+           url=url1;
+           if (response.getStatusCode()==200){
+               flag=false;
+           }
+
+       }
     }
-    public Response getRequest(String url){
+
+    public Response getAnswer(String url){
         Response response=RestAssured
                 .given()
                 .redirects()
@@ -30,5 +33,4 @@ public class TestHomework_3 {
                 .andReturn();
         return response;
     }
-
 }
