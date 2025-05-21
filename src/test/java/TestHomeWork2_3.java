@@ -21,7 +21,7 @@ public class TestHomeWork2_3 {
         Response gettingCookies=getCookies(login,passwords[i]);
         String cookie=gettingCookies.getCookie("auth_cookie");
         Response result =authAttemp(cookie);
-        String authResult=result.print();
+        String authResult=result.getBody().asString();
         if (authResult.equals("You are authorized")){
             System.out.println(passwords[i]+ " верный пароль");
             break;
