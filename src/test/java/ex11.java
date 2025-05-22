@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ex11 {
 
 @Test
-    public void getCookie(){
+    public void getAndCheckCookie(){
         Response response= RestAssured
                 .get("https://playground.learnqa.ru/api/homework_cookie")
                 .andReturn();
