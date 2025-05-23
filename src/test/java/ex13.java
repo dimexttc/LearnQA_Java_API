@@ -27,16 +27,13 @@ public class ex13 {
             .get("https://playground.learnqa.ru/ajax/api/user_agent_check")
             .jsonPath();
 
-        String realDevice=response.getString("device");
-        String realBrowser=response.getString("browser");
-        String realPlatform=response.getString("platform");
 
 
         assertAll(
 
-                ()->assertEquals(expectedDevice,response.getString("device"),realDevice + " - это неверное устройство"),
-                ()->assertEquals(expectedBrowser,response.getString("browser"),realBrowser + " - это неверный браузер"),
-                ()->assertEquals(expectedPlatform,response.getString("platform"),realPlatform + " - это неверная платформа")
+                ()->assertEquals(expectedDevice,response.getString("device"),"неверное устройство"),
+                ()->assertEquals(expectedBrowser,response.getString("browser"),"неверный браузер"),
+                ()->assertEquals(expectedPlatform,response.getString("platform"),"это неверная платформа")
     );
     }
 
