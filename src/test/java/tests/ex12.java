@@ -1,13 +1,9 @@
+package tests;
+
 import io.restassured.RestAssured;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
-import org.apache.http.Header;
 import org.junit.jupiter.api.Test;
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
 
 import static org.junit.jupiter.api.Assertions.*;
 
